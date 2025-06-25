@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Финансовый Трекер</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <section class="input-box">
+      <h2>Добавить транзакцию</h2>
+      <select id="category">
+        <option value="expense">Расход</option>
+        <option value="income">Доход</option>
+      </select>
+      <input type="number" id="amount" placeholder="Сумма" />
+      <input type="date" id="date" />
+      <textarea id="description" placeholder="Описание"></textarea>
+      <input type="text" id="account" placeholder="Счёт" />
+      <button onclick="addEntry()">Сохранить</button>
+    </section>
+
+    <section class="records-box">
+      <div class="search-bar">
+        <input type="text" id="search" placeholder="Поиск..." />
+        <button onclick="filterEntries()">Поиск</button>
+      </div>
+
+      <div id="summary" class="summary-bar">
+        <div class="total-income">Доход: <span id="totalIncome">0 ₸</span></div>
+        <div class="total-expense">Расход: <span id="totalExpense">0 ₸</span></div>
+      </div>
+
+      <div class="records" id="savedList">
+        <!-- Транзакции по датам -->
+      </div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
